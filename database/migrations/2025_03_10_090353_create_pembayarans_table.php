@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pembayarans', function (Blueprint $table) {
+        Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('transaksi_id')->constrained('transaksi')->onDelete('cascade');
+            $table->date('tanggal_bayar');
+            $table->decimal('jumlah_bayar', 10, 2);
+            $table->enum('status', ['cicilan', 'lunas']);
             $table->timestamps();
         });
     }

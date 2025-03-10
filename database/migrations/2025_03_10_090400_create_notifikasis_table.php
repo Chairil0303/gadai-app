@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notifikasis', function (Blueprint $table) {
+        Schema::create('notifikasi', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('nasabah_id')->constrained('nasabah')->onDelete('cascade');
+            $table->text('pesan');
+            $table->enum('status', ['terkirim', 'belum_terkirim'])->default('belum_terkirim');
             $table->timestamps();
         });
     }
