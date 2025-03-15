@@ -2,35 +2,37 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
+            <!-- Logo -->
+            <div class="shrink-0 flex items-center">
+                <a href="{{ route('dashboard') }}">
+                    <h1 class="text-3 font-bold text-gray-900">E<br>C</h1>
+                </a>
+            </div>
+            
             <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <h1 class="text-3 font-bold text-gray-900">E<br>C</h1>
-                    </a>
-                </div>
-
                 <!-- Navigation Links -->
-                <div class="space-y-2">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.*')">
-                        {{ __('Transaksi') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('mutasi.index')" :active="request()->routeIs('mutasi.*')">
-                        {{ __('Mutasi') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('saham-barang.index')" :active="request()->routeIs('saham-barang.*')">
-                        {{ __('Saham Barang') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('nilai-akhir.index')" :active="request()->routeIs('nilai-akhir.*')">
-                        {{ __('Nilai Akhir') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.*')">
-                        {{ __('Laporan') }}
-                    </x-nav-link>
-</div>
+                <div class="hidden md:flex justify-center w-full">
+                    <div class="flex">
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.*')">
+                            {{ __('Transaksi') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('mutasi.index')" :active="request()->routeIs('mutasi.*')">
+                            {{ __('Mutasi') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('saham-barang.index')" :active="request()->routeIs('saham-barang.*')">
+                            {{ __('Saham Barang') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('nilai-akhir.index')" :active="request()->routeIs('nilai-akhir.*')">
+                            {{ __('Nilai Akhir') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.*')">
+                            {{ __('Laporan') }}
+                        </x-nav-link>
+                    </div>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
