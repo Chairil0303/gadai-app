@@ -19,7 +19,7 @@ use App\Http\Controllers\BarangGadaiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {
