@@ -1,10 +1,6 @@
-<aside class="w-52 bg-gray-900 text-white h-screen fixed">
-    <div class="p-4 text-center text-lg font-bold border-b border-white-700">
-        MENU
-    </div>
-    <nav class="mt-4">
-        <ul class="space-y-2">
-            <li>
+
+        <ul class="space-y-2 mt-10">
+            <li> 
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class=" text-white hover:bg-gray-700 block px-4 py-2 rounded">
                     {{ __('Dashboard') }}
                 </x-nav-link>

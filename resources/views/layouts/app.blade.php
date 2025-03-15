@@ -18,17 +18,37 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" x-data="{ open: false }">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex">
-        
-        <!-- Sidebar -->
-        @include('layouts.sidebar')
 
-        <!-- Konten Utama -->
-        <div class="flex-1 ml-52">
-            <!-- Header -->
-            <div class="bg-green-800 text-white py-3 text-center text-2xl font-bold">
-                ENONI CELL
+        <!-- Sidebar -->
+        <aside 
+            class="fixed inset-y-0 left-0 w-52 bg-gray-900 text-white p-4 transform transition-transform duration-300 md:translate-x-0 z-50"
+            :class="open ? 'translate-x-0' : '-translate-x-full'"
+        >
+            <!-- Tombol Close -->
+            <button 
+                class="absolute top-2 right-2 text-white text-xl md:hidden"
+                @click="open = false"
+            >
+                ✖
+            </button>
+
+            @include('layouts.sidebar')
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 md:ml-52">
+            <!-- Navbar -->
+            <div class="bg-green-800 text-white py-3 flex items-center justify-between px-4 md:px-8">
+                <!-- Tombol Hamburger (Mobile Only) -->
+                <button 
+                    class="md:hidden text-white focus:outline-none"
+                    @click="open = true"
+                >
+                    ☰
+                </button>
+                <h1 class="text-2xl font-bold text-center flex-1">ENONI CELL</h1>
             </div>
 
             <!-- Navigation -->
@@ -48,7 +68,9 @@
                 @yield('content')
             </main>
         </div>
-        </div>
-    </body>
+    </div>
+</body>
+
+
 
 </html>
