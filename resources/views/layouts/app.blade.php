@@ -26,6 +26,9 @@
             class="fixed inset-y-0 left-0 w-52 bg-gray-900 text-white p-4 transform transition-transform duration-300 md:translate-x-0 z-50"
             :class="open ? 'translate-x-0' : '-translate-x-full'"
         >
+        <div class="mt-9 p-4 text-center text-lg font-bold border-b border-white-700">
+        MENU
+        </div>
             <!-- Tombol Close -->
             <button 
                 class="absolute top-2 right-2 text-white text-xl md:hidden"

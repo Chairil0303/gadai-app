@@ -1,6 +1,6 @@
 
-        <ul class="space-y-2 mt-10">
-            <li> 
+        <ul class="space-y-2 mt-12">
+            <li>
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class=" text-white hover:bg-gray-700 block px-4 py-2 rounded">
                     {{ __('Dashboard') }}
                 </x-nav-link>
