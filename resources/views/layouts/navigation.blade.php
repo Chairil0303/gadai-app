@@ -6,16 +6,31 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <h1 class="text-3 font-bold text-gray-900">E<br>C</h1>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="space-y-2">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
+                    <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.*')">
+                        {{ __('Transaksi') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('mutasi.index')" :active="request()->routeIs('mutasi.*')">
+                        {{ __('Mutasi') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('saham-barang.index')" :active="request()->routeIs('saham-barang.*')">
+                        {{ __('Saham Barang') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('nilai-akhir.index')" :active="request()->routeIs('nilai-akhir.*')">
+                        {{ __('Nilai Akhir') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.*')">
+                        {{ __('Laporan') }}
+                    </x-nav-link>
+</div>
             </div>
 
             <!-- Settings Dropdown -->

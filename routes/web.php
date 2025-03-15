@@ -4,6 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BarangGadaiController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\MutasiController;
+use App\Http\Controllers\SahamBarangController;
+use App\Http\Controllers\NilaiAkhirController;
+use App\Http\Controllers\LaporanController;
 
 
 
@@ -35,6 +40,15 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('barang-gadai', BarangGadaiController::class);
 
+Route::resource('transaksi', TransaksiController::class);
+
+Route::resource('mutasi', MutasiController::class);
+
+Route::resource('saham-barang', SahamBarangController::class);
+
+Route::resource('nilai-akhir', NilaiAkhirController::class);
+
+Route::resource('laporan', LaporanController::class);
 
 
 
