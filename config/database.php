@@ -43,24 +43,63 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        // 'mysql' => [
+        //     'driver' => 'mysql',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'port' => env('DB_PORT', '3306'),
+        //     'database' => env('DB_DATABASE', 'forge'),
+        //     'username' => env('DB_USERNAME', 'forge'),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'unix_socket' => env('DB_SOCKET', ''),
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'strict' => true,
+        //     'engine' => null,
+        //     'options' => extension_loaded('pdo_mysql') ? array_filter([
+        //         PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        //     ]) : [],
+        // ],
+
+        // Koneksi default (jika dibutuhkan)
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
+            'database' => env('DB_DATABASE', 'laravel'),
+            'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'strict' => true,
-            'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            // ...
+        ],
+         // Koneksi untuk Cabang 1
+        'tenant1' => [
+            'driver' => 'mysql',
+            'host' => env('TENANT1_DB_HOST', '127.0.0.1'),
+            'database' => env('TENANT1_DB_DATABASE', 'cabang1_db'),
+            'username' => env('TENANT1_DB_USERNAME', 'root'),
+            'password' => env('TENANT1_DB_PASSWORD', ''),
+            // ...
+        ],
+
+        // Koneksi untuk Cabang 2
+        'tenant2' => [
+            'driver' => 'mysql',
+            'host' => env('TENANT2_DB_HOST', '127.0.0.1'),
+            'database' => env('TENANT2_DB_DATABASE', 'cabang2_db'),
+            'username' => env('TENANT2_DB_USERNAME', 'root'),
+            'password' => env('TENANT2_DB_PASSWORD', ''),
+            // ...
+        ],
+
+        // Koneksi untuk Cabang 3
+        'tenant3' => [
+            'driver' => 'mysql',
+            'host' => env('TENANT3_DB_HOST', '127.0.0.1'),
+            'database' => env('TENANT3_DB_DATABASE', 'cabang3_db'),
+            'username' => env('TENANT3_DB_USERNAME', 'root'),
+            'password' => env('TENANT3_DB_PASSWORD', ''),
+            // ...
         ],
 
         'pgsql' => [
